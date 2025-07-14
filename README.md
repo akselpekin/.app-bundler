@@ -1,8 +1,17 @@
-# app-bundler
+# app-helpers
 
-## Usage
-1. Before running the script ensure its executable: chmod +x app_bundler.sh (This will make the script executable)
- 
-2. Usage: ./app_bundler.sh <APP_NAME> <BUNDLE_ID> <VERSION> <EXECUTABLE_PATH> <ICON_PATH>
+## Usages
+Before running the scripts ensure they're executable: `chmod +x example.sh` *(This will make the scripts executable)*
 
-3. Example: ./app_bundler.sh CoolApp com.example.example_app 1.0 ./build/app ./ASSETS/icon.icns
+### app_bundler.sh
+Usage: `./app_bundler.sh <APP_NAME> <BUNDLE_ID> <VERSION> <EXECUTABLE_PATH> <ICON_PATH>`
+
+### codesign.sh
+Usage: `./codesign.sh <APP_PATH> <SIGNING_IDENTITY> [ENTITLEMENTS_PATH]`
+
+### create_keychain_profile.sh
+Usage: `./create_keychain_profile.sh <PROFILE_NAME> <APPLE_ID> <APP_SPECIFIC_PASSWORD> <TEAM_ID>`
+
+### notaryservice.sh
+Usage: `./notaryservice.sh <APP_PATH>`
+*Follows interactive prompts for manual or keychain-profile mode.*
