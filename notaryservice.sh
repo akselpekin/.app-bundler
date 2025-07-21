@@ -2,7 +2,7 @@
 
 # notaryservice.sh
 # Usage: ./notaryservice.sh <APP_PATH>
-# Example: ./notaryservice.sh MyApp.app  (interactive exchange)
+# Example: ./notaryservice.sh MyApp  (interactive exchange)
 
 set -euo pipefail
 
@@ -32,11 +32,6 @@ else
 fi
 
 ZIP_PATH="${APP_PATH}.zip"
-if [ ! -f "${ZIP_PATH}" ]; then
-  echo "Creating zip ${ZIP_PATH}"
-  ditto -c -k --keepParent "${APP_PATH}" "${ZIP_PATH}"
-fi
-
 
 if [[ "$MODE" == "1" ]]; then
   echo "Submitting ${ZIP_PATH} with notarytool (manual credentials mode)"
