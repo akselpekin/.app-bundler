@@ -22,10 +22,6 @@ if [[ "$MODE" == "1" ]]; then
   read -p "Team ID: " TEAM_ID
 elif [[ "$MODE" == "2" ]]; then
   read -p "Keychain profile name: " KEYCHAIN_PROFILE
-  if ! xcrun notarytool store-credentials list | grep -q "^${KEYCHAIN_PROFILE}$"; then
-    echo "Keychain profile '${KEYCHAIN_PROFILE}' not found. Exiting."
-    exit 1
-  fi
 else
   echo "Invalid choice. Exiting."
   exit 1
